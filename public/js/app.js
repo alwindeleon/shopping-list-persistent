@@ -1,15 +1,11 @@
 $(document).ready(function(){
-<<<<<<< HEAD
-    
-});
-=======
     $.ajax({
         method: "GET",
         url: "/items"
         success: function(itemList){
             var i = 0;
             while(i < itemList.length){
-                $("body").append("<div>"+ itemList[i].item.val() +" "+ itemList[i].qty.val() +" " + itemList[i].price.val() +"</div>");
+                $(".itemContainer").append("<div class ='listItem'>"+ itemList[i].item.val() +" "+ itemList[i].qty.val() +" " + itemList[i].price.val() +"</div>");
                 i = i + 1;
             }
         }
@@ -35,7 +31,7 @@ $(document).ready(function(){
             data: JSONObj
         })
 
-        $("body").append("<div>"+ item.val() +" "+ qty.val() +" " + price.val() +"</div>");
+        $(".itemContainer").append("<div>"+ item.val() +" "+ qty.val() +" " + price.val() +"</div>");
     });
+
 })
->>>>>>> aa52711a96d8ce8f15ce8454d69087794f2308b5

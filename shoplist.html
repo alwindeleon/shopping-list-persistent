@@ -21,15 +21,6 @@
       z-index: 9;
     }
 
-    .carousel-control {
-      height: 40px;
-      margin-top: 50;
-      font-size: 120px;
-      text-shadow: 0 1px 1px rgba(0,0,0,.4);
-      background-color: transparent;
-      border: 0;
-      z-index: 10;
-    }
     .carousel .item {
       height: 500px;
     }
@@ -45,7 +36,6 @@
   </head>
   <body>
     <div class = "container">
-      <div class = "jumbotron">
         <div class = "carousel slide" data ride = "carousel" id = "carousel-ex">
           <ol class = "carousel-indicators">
             <li data-target = "#carousel-ex" data-slide-to = "0" class = "active"></li>
@@ -77,27 +67,31 @@
     </div>
 
     <div class = "container">
-        <table class = "table table-hover">
+        <table class = "table table-hover form-inline">
           <tr>
-            <div class = "col-md-10">
+            <div class = "col-md-4">
               <td><b> ITEM </b></td>
             </div>
-            <div class = "col-md-1">
+            <div class = "col-md-4">
               <td><b> QUANTITY </b></td>
             </div>
+            <div class = "col-md-4">
+              <td><b> PRICE </b></td>
+            </div>
           </tr>
-          <tr class = "info">
+          <tr class = "info form-inline">
             <td><input type = "text" id = "inputitem" class = "form-control"></td>
             <td><input type = "text" id = "inputquantity" class = "form-control"></td>
-            <td><button type = "submit" class = "btn btn-primary">Submit</button></td>
+            <td>
+            <td><input type = "text" id = "inputprice" class = "form-control"></td>
+            <td>
           </tr>
         </table>
       </div>
     </div>
 
     <div class = "container">
-      <div class = "well pull-right"> PRICE HERE </div>
-
+      <div class = "pull-right"> <button type = "submit" class = "btn btn-primary">Submit</button> </div>
     </div>
     
 

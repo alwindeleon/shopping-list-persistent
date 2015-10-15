@@ -2,14 +2,13 @@ $(document).ready(function(){
     $.ajax({
         method: "GET",
         url: "/items"
-        success: function(itemList){
-            var i = 0;
-            while(i < itemList.length){
-                $(".itemContainer").append("<div class ='listItem'>"+ itemList[i].item.val() +" "+ itemList[i].qty.val() +" " + itemList[i].price.val() +"</div>");
-                i = i + 1;
-            }
+    }).done(function(itemList){
+        var i = 0;
+        while(i < itemList.length){
+            $(".itemContainer").append("<div class ='listItem'>"+ itemList[i].item.val() +" "+ itemList[i].qty.val() +" " + itemList[i].price.val() +"</div>");
+            i = i + 1;
         }
-    })
+    });
 
     $("#submitButton").click(function(){
 
@@ -31,7 +30,7 @@ $(document).ready(function(){
             data: JSONObj
         })
 
-        $(".itemContainer").append("<div>"+ item.val() +" "+ qty.val() +" " + price.val() +"</div>");
+        $(".itemContainer").append("<div class = 'listItem'>"+ item.val() +" "+ qty.val() +" " + price.val() +"</div>");
     });
 
 })

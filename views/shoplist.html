@@ -12,37 +12,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
   <style>
-    .carousel {
-      margin-bottom: 60px;
-    }
-
-    .carousel .container {
-      position: relative;
-      z-index: 9;
-    }
-
-    .carousel .item {
-      height: 500px;
-    }
-    .carousel img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      height: 500px;
-    }
     .itemContainer{
         float: none;
         margin-left: auto;
         margin-right: auto;
     }
-    .listItem {
-        max-width: 15em;
-      float: none;
-      margin-left: auto;
-      margin-right: auto;
-      background: #999;
+
+    .table-striped{
+        max-width: 30em;
     }
+
   </style>
 
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -50,36 +29,6 @@
 
   </head>
   <body>
-    <div class = "container">
-        <div class = "carousel slide" data ride = "carousel" id = "carousel-ex">
-          <ol class = "carousel-indicators">
-            <li data-target = "#carousel-ex" data-slide-to = "0" class = "active"></li>
-            <li data-target = "#carousel-ex" data-slide-to = "1"></li>
-            <li data-target = "#carousel-ex" data-slide-to = "2"></li>
-            <li data-target = "#carousel-ex" data-slide-to = "3"></li>
-            <li data-target = "#carousel-ex" data-slide-to = "4"></li>
-          </ol>
-          <div class = "carousel-inner">
-            <div class = "item active">
-              <img src = "http://chicagogenie.com/wp-content/uploads/2015/04/Girls-Shopping.jpg" alt = "image">
-            </div>
-            <div class = "item">
-              <img src = "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRYdr-pGaMmFJkX3FsQeDR_1TLIKzou6IWFwELrsHlVHv75TU_tZg" alt = "image">
-            </div>
-            <div class = "item">
-              <img src = "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS6Q0IupBFxDpkzkdmTURNV1bQLH8jwHJwWedYUnibmCXn6CFPJ" alt = "image">
-            </div>
-            <div class = "item">
-              <img src = "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRZD6d-mfBKh1tFXpOh2-MI-hggNYpvLbutiYvpvdAn9Xb-y0PgDA" alt = "image">
-            </div>
-            <div class = "item">
-              <img src = "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQjrJmp8tXptUUaErgEZX42c2YjwWzpso2HW-INSvt-90O85ukavQ" alt = "image">
-            </div>
-          </div>
-        <a href = "#carousel-ex" class = "left carousel-control" data-slide = "prev"> <span class = "glyphicon glyphicon-chevron-left"></span></a>
-        <a href = "#carousel-ex" class = "right carousel-control" data-slide = "next"> <span class = "glyphicon glyphicon-chevron-right"></span></a>
-      </div>
-    </div>
 
     <div class = "container">
         <table class = "table table-hover form-inline">
@@ -97,9 +46,7 @@
           <tr class = "info form-inline">
             <td><input type = "text" id = "item" class = "form-control"></td>
             <td><input type = "text" id = "quantity" class = "form-control"></td>
-            <td>
             <td><input type = "text" id = "price" class = "form-control"></td>
-            <td>
           </tr>
         </table>
       </div>
@@ -109,8 +56,18 @@
       <div class = "pull-right"> <button type = "submit" id="submitButton" class = "btn btn-primary">Submit</button> </div>
     </div>
 
-    <div class = "itemContainer">
-      <div class="listItem"> Eggs 5 100 </div>
+    <div class="container">           
+        <table class="table table-striped">
+            <thead>
+                <th>Current List</th>
+            </thead>
+            <tbody class="itemContainer">
+            </tbody>
+        </table>
+    </div>
+
+    <div class = "container">
+      <div> <button type = "remove" id="removeButton" class = "btn btn-primary">Remove Last Item</button> </div>
     </div>
     
 

@@ -5,7 +5,11 @@ $(document).ready(function(){
     }).done(function(itemList){
         var i = 0;
         while(i < itemList.length){
-            $(".itemContainer").append("<div class ='listItem'>"+ itemList[i].item.val() +" "+ itemList[i].qty.val() +" " + itemList[i].price.val() +"</div>");
+            $(".itemContainer").append("<tr class='listItem'> <td>"+ 
+                itemList[i].item.val() +"</td> <td'>"+ 
+                itemList[i].qty.val() +"</td> <td> " + 
+                itemList[i].price.val() +"</td></tr>"
+            );
             i = i + 1;
         }
     });
@@ -13,8 +17,8 @@ $(document).ready(function(){
     $("#submitButton").click(function(){
 
         var item = $("input#item");
-        var price = $("input#quantity");
-        var qty = $("input#price");
+        var price = $("input#price");
+        var qty = $("input#quantity");
 
         // JSON Object
         var JSONObj = {
@@ -30,7 +34,15 @@ $(document).ready(function(){
             data: JSONObj
         })
 
-        $(".itemContainer").append("<div class = 'listItem'>"+ item.val() +" "+ qty.val() +" " + price.val() +"</div>");
+        $(".itemContainer").append("<tr class='listItem'> <td>"+ 
+            item.val() +"</td> <td>"+ 
+            qty.val() +"</td> <td> " + 
+            price.val() +" Php</td></tr>"
+        );
+    });
+
+    $("#removeButton").click(function(){
+        $(".listItem:last").remove();
     });
 
 })
